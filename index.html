@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NZ南島の旅 2025</title>
+<title>NZ南島の旅 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 /* ===========================
@@ -201,7 +201,6 @@ body {
 .day-card {
   background: white;
   border-radius: var(--r-lg);
-  overflow: hidden;
   box-shadow: var(--elev-1);
   border: 1px solid var(--surface-2);
 }
@@ -213,6 +212,11 @@ body {
   background: var(--surface-1);
   border-bottom: 1px solid var(--surface-2);
   min-height: 64px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  overflow: hidden;
 }
 
 .day-date {
@@ -230,9 +234,9 @@ body {
 .day-date .d {
   font-family: var(--font-serif);
   font-size: 26px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
-  color: var(--tertiary-light);
+  color: #FFFFFF;
 }
 
 .day-date .m {
@@ -240,7 +244,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--primary-70);
+  color: rgba(255,255,255,0.55);
   margin-top: 2px;
 }
 
@@ -278,13 +282,6 @@ body {
   color: var(--on-surface-var);
   margin-top: 1px;
 }
-
-/* Highlight days */
-.day-card.highlight-gold .day-head { background: var(--tertiary-pale); border-bottom-color: rgba(181,137,58,0.2); }
-.day-card.highlight-gold .day-date { background: var(--tertiary); }
-.day-card.highlight-gold .day-weekday { color: var(--tertiary); }
-.day-card.highlight-blue .day-head { background: #EBF4FA; border-bottom-color: rgba(45,106,79,0.15); }
-.day-card.highlight-blue .day-date { background: var(--primary-80); }
 
 /* Events */
 .day-body { padding: var(--sp-sm) var(--sp-md); }
@@ -546,14 +543,6 @@ body {
   text-decoration: none;
 }
 
-/* Photo card */
-.photo-card {
-  background: #0D2B20;
-  color: var(--on-primary);
-  border-radius: var(--r-lg);
-  overflow: hidden;
-}
-
 /* ===========================
    FOOTER
    =========================== */
@@ -574,15 +563,85 @@ footer strong { color: var(--primary-70); }
    =========================== */
 .section-gap { height: 8px; }
 
+
+/* ===========================
+   INFO ACCORDION
+   =========================== */
+.info-toggle {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.info-arrow {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background-color: var(--tertiary-light);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: transform 0.25s ease;
+}
+
+.info-body {
+  display: none;
+}
+
+.info-body.open {
+  display: block;
+}
+
+.info-toggle.open .info-arrow {
+  transform: rotate(180deg);
+}
+
+.day-head::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: auto 16px auto 8px;
+  flex-shrink: 0;
+  background-color: var(--primary-80);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: transform 0.25s ease;
+}
+
+.day-card.open .day-head::after {
+  transform: rotate(180deg);
+}
+
+.day-body {
+  display: none;
+}
+
+.day-card.open .day-body {
+  display: block;
+  padding: var(--sp-sm) var(--sp-md);
+}
+
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">Travel Itinerary · May 2025</div>
+  <div class="hero-eyebrow">Travel Itinerary · May 2026</div>
   <h1 class="hero-title">ニュージーランド<br><span class="accent">南島</span>の旅</h1>
-  <div class="hero-dates">May 23 – 31, 2025</div>
+  <div class="hero-dates">May 23 – 31, 2026</div>
   <div class="hero-route">
     Christchurch &rarr; Lake Tekapo &rarr; Mt. Cook<br>
     Omarama &rarr; Te Anau &rarr; Queenstown
@@ -899,7 +958,6 @@ footer strong { color: var(--primary-70); }
         <div class="event-time">泊</div>
         <div class="event-body">
           <div class="event-title">Haka House Hostel Aoraki Mt Cook</div>
-          <div class="event-detail">（前予約から1週間スライド想定）</div>
           <div class="chips"><span class="chip chip-primary">宿泊</span></div>
           <div class="links">
             <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Haka+House+Hostel+Mount+Cook" target="_blank">ホステルマップ</a>
@@ -1031,7 +1089,7 @@ footer strong { color: var(--primary-70); }
   </div>
 
   <!-- 5/28 TOUR DAY -->
-  <div class="day-card highlight-gold">
+  <div class="day-card">
     <div class="day-head">
       <div class="day-date"><div class="d">28</div><div class="m">MAY · THU</div></div>
       <div class="day-meta">
@@ -1049,12 +1107,12 @@ footer strong { color: var(--primary-70); }
           <div class="chips"><span class="chip chip-surface">移動</span></div>
           <div class="alert">5月は雪・凍結の可能性あり。NZTAで道路状況確認。Cromwellで給油推奨</div>
           <div class="links">
-            <a class="btn btn-book" href="https://www.nzta.govt.nz/traffic-and-travel/highway-conditions/" target="_blank">NZTA 道路状況</a>
+            <a class="btn btn-book" href="https://www.journeys.nzta.govt.nz/highway-conditions/otago" target="_blank">SH8 リンディスパス 道路状況</a>
           </div>
         </div>
       </div>
       <div class="event">
-        <div class="event-time">09:30</div>
+        <div class="event-time">途中</div>
         <div class="event-body">
           <div class="event-title">撮影 — リンディスパス（Lindis Pass）</div>
           <div class="event-detail">標高971m。4〜5月は草が黄金色に染まる最高の時期。「Lindis Pass Lookout」駐車場から展望デッキへ</div>
@@ -1138,7 +1196,7 @@ footer strong { color: var(--primary-70); }
   </div>
 
   <!-- 5/29 CRUISE DAY -->
-  <div class="day-card highlight-blue">
+  <div class="day-card">
     <div class="day-head">
       <div class="day-date"><div class="d">29</div><div class="m">MAY · FRI</div></div>
       <div class="day-meta">
@@ -1155,7 +1213,7 @@ footer strong { color: var(--primary-70); }
           <div class="alert">ミルフォードにガソリンスタンドなし。スノーチェーン推奨。防水レインウェア必携（年間雨量7,000mm）</div>
           <div class="links">
             <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=gas+station+Te+Anau" target="_blank">テアナウ ガソリンスタンド</a>
-            <a class="btn btn-book" href="https://www.nzta.govt.nz/traffic-and-travel/highway-conditions/" target="_blank">NZTA 道路状況</a>
+            <a class="btn btn-book" href="https://www.nzta.govt.nz/projects/sh94-milford-road/sh94-milford-road-status" target="_blank">SH94 ミルフォードロード 道路状況</a>
           </div>
         </div>
       </div>
@@ -1377,7 +1435,7 @@ footer strong { color: var(--primary-70); }
   <!-- 5/31 -->
   <div class="day-card">
     <div class="day-head">
-      <div class="day-date" style="background: #7F1D1D;"><div class="d">31</div><div class="m">MAY · SUN</div></div>
+      <div class="day-date"><div class="d">31</div><div class="m">MAY · SUN</div></div>
       <div class="day-meta">
         <div class="day-weekday">日曜日</div>
         <div class="day-place">帰国日</div>
@@ -1430,10 +1488,12 @@ footer strong { color: var(--primary-70); }
 
   <!-- Rental Car -->
   <div class="info-card">
-    <div class="info-card-head">
+    <div class="info-card-head info-toggle" data-target="info-car">
       <div class="info-card-title">レンタカー情報</div>
+      <span class="info-arrow"></span>
     </div>
-    <div class="info-rows">
+    <div class="info-body" id="info-car">
+      <div class="info-rows">
       <div class="info-row">
         <div class="info-label">会社</div>
         <div class="info-value">Avis（Booking.com 経由）<br><a href="https://cars.booking.com/my-booking/-fvQDaHKG_DMDfNAf3iurK6ccGfQRZqyBN-aAqU0UeaYCNe5CrIah8flXj74JNxHAjnVdhSw3wR0PxCJLKgsUF2q29zEt4XYY8hMaDjY_hB_B33emCWWcTY_ABIzc5scrdNNe9fowSJMJDQ9RgAhCA?preflang=ja" target="_blank">予約確認はこちら</a></div>
@@ -1443,26 +1503,17 @@ footer strong { color: var(--primary-70); }
       <div class="info-row"><div class="info-label">返却</div><div class="info-value">5月31日（日）05:00 — クイーンズタウン空港</div></div>
       <div class="info-row"><div class="info-label">注意</div><div class="info-value">NZは左側通行・右ハンドル。山道・砂利道・5月の積雪に注意。スノーチェーン準備推奨。</div></div>
     </div>
+    </div>
   </div>
 
-  <!-- Photo Notes -->
-  <div class="info-card" style="background: #0D2B20;">
-    <div class="info-card-head">
-      <div class="info-card-title">撮影メモ</div>
-    </div>
-    <div class="info-rows">
-      <div class="info-row"><div class="info-label">機材</div><div class="info-value">一眼ミラーレス / 三脚 / リモートシャッター</div></div>
-      <div class="info-row"><div class="info-label">星景設定</div><div class="info-value">ISO 3200〜6400 / F2.8以下 / SS 15〜25秒</div></div>
-      <div class="info-row"><div class="info-label">テカポ</div><div class="info-value">5月は新月付近で好条件。日没17:30〜。気温0〜5℃</div></div>
-      <div class="info-row"><div class="info-label">QT夜景</div><div class="info-value">ゴンドラ山頂。日没17:15〜。ブルーアワーが最高の15分</div></div>
-    </div>
-  </div>
 
   <!-- Reservation Checklist -->
   <div class="checklist-card">
-    <div class="checklist-head">
+    <div class="checklist-head info-toggle" data-target="info-checklist">
       <div class="checklist-title">要予約チェックリスト</div>
+      <span class="info-arrow"></span>
     </div>
+    <div class="info-body" id="info-checklist">
     <div class="checklist-rows">
       <div class="checklist-row">
         <div class="cl-date">5/28</div>
@@ -1493,6 +1544,7 @@ footer strong { color: var(--primary-70); }
         </div>
       </div>
     </div>
+    </div>
   </div>
 
 </div>
@@ -1500,9 +1552,66 @@ footer strong { color: var(--primary-70); }
 <div class="section-gap"></div>
 
 <footer>
-  <strong>NZ South Island Trip 2025</strong><br>
+  <strong>NZ South Island Trip 2026</strong><br>
   May 23 – 31 &nbsp;&middot;&nbsp; 9 Days &nbsp;&middot;&nbsp; Personal Itinerary
 </footer>
 
+<script>
+// Accordion — toggle open/close on day-head click
+document.querySelectorAll(".day-head").forEach(function(head) {
+  head.addEventListener("click", function() {
+    var card = head.closest(".day-card");
+    var isOpen = card.classList.contains("open");
+    // Close all
+    document.querySelectorAll(".day-card").forEach(function(c) {
+      c.classList.remove("open");
+    });
+    // If it was closed, open it
+    if (!isOpen) {
+      card.classList.add("open");
+    }
+  });
+});
+
+// Info card accordion
+document.querySelectorAll(".info-toggle").forEach(function(toggle) {
+  toggle.addEventListener("click", function() {
+    var targetId = toggle.getAttribute("data-target");
+    var body = document.getElementById(targetId);
+    var isOpen = body.classList.contains("open");
+    if (isOpen) {
+      body.classList.remove("open");
+      toggle.classList.remove("open");
+    } else {
+      body.classList.add("open");
+      toggle.classList.add("open");
+    }
+  });
+});
+
+// Open today's card automatically, fallback to first card
+var today = new Date();
+var todayDay = today.getDate();
+var todayMonth = today.getMonth() + 1;
+var opened = false;
+var monthMap = { JAN:1,FEB:2,MAR:3,APR:4,MAY:5,JUN:6,JUL:7,AUG:8,SEP:9,OCT:10,NOV:11,DEC:12 };
+
+document.querySelectorAll(".day-card").forEach(function(card) {
+  var dEl = card.querySelector(".day-date .d");
+  var mEl = card.querySelector(".day-date .m");
+  if (!dEl || !mEl) return;
+  var cardDay = parseInt(dEl.textContent.trim(), 10);
+  var cardMonth = monthMap[mEl.textContent.trim().substring(0, 3).toUpperCase()] || 0;
+  if (cardDay === todayDay && cardMonth === todayMonth) {
+    card.classList.add("open");
+    opened = true;
+  }
+});
+
+if (!opened) {
+  var allCards = document.querySelectorAll(".day-card");
+  if (allCards.length > 0) allCards[0].classList.add("open");
+}
+</script>
 </body>
 </html>
