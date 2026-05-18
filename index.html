@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NZ南島の旅 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===========================
+   Material Design 3 — 3-Color System
+   Primary:   #1B4332 (Deep Forest Green)
+   Secondary: #F8F4EF (Warm Surface / Paper)
+   Tertiary:  #B5893A (Amber Gold)
+   =========================== */
+:root {
+  /* Primary — Deep Forest Green */
+  --primary:         #1B4332;
+  --primary-90:      #2D6A4F;
+  --primary-80:      #40916C;
+  --primary-70:      #52B788;
+  --primary-30:      #0D2B20;
+  --primary-10:      #081810;
+  --on-primary:      #FFFFFF;
+
+  /* Surface — Warm Neutral */
+  --surface:         #F8F4EF;
+  --surface-1:       #F0EBE3;
+  --surface-2:       #E6DFD5;
+  --surface-3:       #D9D0C4;
+  --surface-4:       #C8BDB0;
+  --surface-variant: #EAE4DC;
+  --on-surface:      #1A1A18;
+  --on-surface-var:  #4A4741;
+
+  /* Tertiary — Amber */
+  --tertiary:        #B5893A;
+  --tertiary-light:  #D4A85A;
+  --tertiary-pale:   #F5EDD8;
+  --on-tertiary:     #FFFFFF;
+
+  /* Semantic */
+  --error:           #B91C1C;
+  --error-surface:   #FEF2F2;
+
+  /* Typography */
+  --font-sans: 'Noto Sans JP', sans-serif;
+  --font-serif: 'Noto Sans JP', sans-serif;
+
+  /* Elevation (MD3) */
+  --elev-1: 0 1px 2px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+  --elev-2: 0 2px 4px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.08);
+  --elev-3: 0 4px 8px rgba(0,0,0,0.10), 0 3px 10px rgba(0,0,0,0.08);
+
+  /* Spacing */
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 16px;
+  --sp-lg: 24px;
+  --sp-xl: 32px;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 28px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--surface);
+  color: var(--on-surface);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===========================
+   HERO / COVER
+   =========================== */
+.hero {
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: var(--sp-xl) var(--sp-md) 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--tertiary), var(--tertiary-light));
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary-70);
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 7vw, 40px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.hero-title .accent {
+  color: var(--tertiary-light);
+}
+
+.hero-dates {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--primary-70);
+  margin-top: 10px;
+  letter-spacing: 0.04em;
+}
+
+.hero-route {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 14px;
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+}
+
+/* ===========================
+   STATS STRIP
+   =========================== */
+.stats {
+  background: var(--primary-30);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.stat {
+  padding: 14px var(--sp-sm);
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+.stat:last-child { border-right: none; }
+
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--tertiary-light);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary-70);
+  margin-top: 3px;
+}
+
+/* ===========================
+   SECTION HEADER
+   =========================== */
+.section-header {
+  padding: var(--sp-lg) var(--sp-md) var(--sp-sm);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary-80);
+}
+
+/* ===========================
+   DAY CARDS
+   =========================== */
+.days {
+  padding: 0 var(--sp-md) var(--sp-xl);
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.day-card {
+  background: white;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--elev-1);
+  border: 1px solid var(--surface-2);
+}
+
+/* Day header */
+.day-head {
+  display: flex;
+  align-items: stretch;
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--surface-2);
+  min-height: 64px;
+}
+
+.day-date {
+  background: var(--primary);
+  color: var(--on-primary);
+  width: 60px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-sm);
+}
+
+.day-date .d {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--tertiary-light);
+}
+
+.day-date .m {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-70);
+  margin-top: 2px;
+}
+
+.day-meta {
+  flex: 1;
+  padding: 10px var(--sp-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.day-weekday {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary-80);
+}
+
+.day-place {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--on-surface);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.day-place-sub {
+  font-size: 11px;
+  color: var(--on-surface-var);
+  margin-top: 1px;
+}
+
+/* Highlight days */
+.day-card.highlight-gold .day-head { background: var(--tertiary-pale); border-bottom-color: rgba(181,137,58,0.2); }
+.day-card.highlight-gold .day-date { background: var(--tertiary); }
+.day-card.highlight-gold .day-weekday { color: var(--tertiary); }
+.day-card.highlight-blue .day-head { background: #EBF4FA; border-bottom-color: rgba(45,106,79,0.15); }
+.day-card.highlight-blue .day-date { background: var(--primary-80); }
+
+/* Events */
+.day-body { padding: var(--sp-sm) var(--sp-md); }
+
+.event {
+  display: flex;
+  gap: var(--sp-sm);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--surface-1);
+  align-items: flex-start;
+}
+
+.event:last-child { border-bottom: none; padding-bottom: 4px; }
+
+.event-time {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tertiary);
+  min-width: 46px;
+  padding-top: 2px;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+.event-body { flex: 1; min-width: 0; }
+
+.event-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--on-surface);
+}
+
+.event-detail {
+  font-size: 12px;
+  color: var(--on-surface-var);
+  margin-top: 4px;
+  line-height: 1.65;
+}
+
+.event-detail strong {
+  color: var(--on-surface);
+  font-weight: 500;
+}
+
+/* Chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.chip {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 100px;
+  line-height: 1.4;
+}
+
+.chip-primary   { background: rgba(27,67,50,0.10); color: var(--primary); }
+.chip-tertiary  { background: rgba(181,137,58,0.12); color: var(--tertiary); }
+.chip-surface   { background: var(--surface-2); color: var(--on-surface-var); }
+.chip-alert     { background: var(--error-surface); color: var(--error); }
+
+/* Links row */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 5px 12px;
+  border-radius: 100px;
+  line-height: 1.3;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.btn:active { opacity: 0.7; }
+
+.btn-map {
+  background: var(--surface-2);
+  color: var(--primary);
+  border: 1px solid var(--surface-3);
+}
+
+.btn-book {
+  background: var(--primary);
+  color: var(--on-primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-confirm {
+  background: var(--tertiary);
+  color: var(--on-tertiary);
+  border: 1px solid var(--tertiary);
+}
+
+.btn-phone {
+  background: white;
+  color: var(--primary-80);
+  border: 1px solid var(--surface-3);
+}
+
+/* Alert box */
+.alert {
+  background: var(--tertiary-pale);
+  border-left: 3px solid var(--tertiary);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #7A5520;
+  line-height: 1.65;
+}
+
+.alert-error {
+  background: var(--error-surface);
+  border-left-color: var(--error);
+  color: var(--error);
+}
+
+/* Note box */
+.note {
+  background: var(--surface-1);
+  border-radius: var(--r-sm);
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--on-surface-var);
+  line-height: 1.65;
+}
+
+/* ===========================
+   INFO CARDS (bottom)
+   =========================== */
+.info-section {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md) var(--sp-md);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-card {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.info-card-head {
+  padding: var(--sp-md) var(--sp-md) var(--sp-sm);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.info-card-title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--tertiary-light);
+}
+
+.info-rows {
+  padding: var(--sp-sm) var(--sp-md) var(--sp-md);
+}
+
+.info-row {
+  display: flex;
+  gap: var(--sp-md);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 13px;
+  align-items: flex-start;
+  line-height: 1.55;
+}
+.info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.info-label {
+  color: var(--primary-70);
+  font-size: 11px;
+  font-weight: 500;
+  min-width: 56px;
+  flex-shrink: 0;
+  padding-top: 1px;
+  letter-spacing: 0.04em;
+}
+
+.info-value { color: rgba(255,255,255,0.9); }
+.info-value a { color: var(--tertiary-light); text-decoration: none; font-size: 12px; }
+
+/* Checklist card */
+.checklist-card {
+  background: var(--primary-30);
+  color: var(--on-primary);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.checklist-head {
+  padding: var(--sp-md) var(--sp-md) var(--sp-sm);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.checklist-title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--tertiary-light);
+}
+
+.checklist-rows { padding: var(--sp-sm) var(--sp-md) var(--sp-md); }
+
+.checklist-row {
+  display: flex;
+  gap: var(--sp-md);
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 13px;
+  align-items: flex-start;
+}
+.checklist-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.cl-date {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-70);
+  min-width: 36px;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.cl-body { flex: 1; }
+
+.cl-name {
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.cl-link {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--tertiary-light);
+  text-decoration: none;
+}
+
+/* Photo card */
+.photo-card {
+  background: #0D2B20;
+  color: var(--on-primary);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+footer {
+  background: var(--primary-10);
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+  padding: var(--sp-lg) var(--sp-md);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+}
+
+footer strong { color: var(--primary-70); }
+
+/* ===========================
+   DIVIDER
+   =========================== */
+.section-gap { height: 8px; }
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Travel Itinerary · May 2025</div>
+  <h1 class="hero-title">ニュージーランド<br><span class="accent">南島</span>の旅</h1>
+  <div class="hero-dates">May 23 – 31, 2025</div>
+  <div class="hero-route">
+    Christchurch &rarr; Lake Tekapo &rarr; Mt. Cook<br>
+    Omarama &rarr; Te Anau &rarr; Queenstown
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">9</div><div class="stat-label">Days</div></div>
+  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Areas</div></div>
+  <div class="stat"><div class="stat-num">7</div><div class="stat-label">Stays</div></div>
+  <div class="stat"><div class="stat-num">2</div><div class="stat-label">Tours</div></div>
+</div>
+
+<div class="section-gap"></div>
+
+<!-- SECTION HEADER -->
+<div class="section-header">
+  <div class="section-title">Day by Day</div>
+</div>
+
+<!-- DAYS -->
+<div class="days">
+
+  <!-- 5/23 -->
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-date"><div class="d">23</div><div class="m">MAY · SAT</div></div>
+      <div class="day-meta">
+        <div class="day-weekday">土曜日</div>
+        <div class="day-place">出発日</div>
+        <div class="day-place-sub">Narita &rarr; Christchurch</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="event">
+        <div class="event-time">20:05</div>
+        <div class="event-body">
+          <div class="event-title">成田空港 出発</div>
+          <div class="event-detail">ジェットスター便 / 機内泊</div>
+          <div class="chips"><span class="chip chip-primary">フライト</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=成田国際空港" target="_blank">成田空港</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5/24 -->
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-date"><div class="d">24</div><div class="m">MAY · SUN</div></div>
+      <div class="day-meta">
+        <div class="day-weekday">日曜日</div>
+        <div class="day-place">クライストチャーチ</div>
+        <div class="day-place-sub">Christchurch</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="event">
+        <div class="event-time">13:55</div>
+        <div class="event-body">
+          <div class="event-title">クライストチャーチ空港 到着</div>
+          <div class="chips"><span class="chip chip-primary">到着</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Christchurch+Airport+New+Zealand" target="_blank">空港マップ</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">15:00</div>
+        <div class="event-body">
+          <div class="event-title">レンタカー ピックアップ</div>
+          <div class="event-detail">Avis / マツダ3 または同等クラス（空港カウンター）</div>
+          <div class="chips"><span class="chip chip-primary">レンタカー開始</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Avis+Christchurch+Airport" target="_blank">Avis カウンター</a>
+            <a class="btn btn-confirm" href="https://cars.booking.com/my-booking/-fvQDaHKG_DMDfNAf3iurK6ccGfQRZqyBN-aAqU0UeaYCNe5CrIah8flXj74JNxHAjnVdhSw3wR0PxCJLKgsUF2q29zEt4XYY8hMaDjY_hB_B33emCWWcTY_ABIzc5scrdNNe9fowSJMJDQ9RgAhCA?preflang=ja" target="_blank">予約確認</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">16:00</div>
+        <div class="event-body">
+          <div class="event-title">市内観光</div>
+          <div class="event-detail">Christchurch Botanic Gardens（入場無料 / 秋の紅葉）&rarr; New Regent Street（カラフルな木造建築 / 路面電車）</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Christchurch+Botanic+Gardens" target="_blank">Botanic Gardens</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=New+Regent+Street+Christchurch" target="_blank">New Regent St</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">18:00</div>
+        <div class="event-body">
+          <div class="event-title">夕食 — Riverside Market</div>
+          <div class="event-detail">Kaiser Brew Garden（2階 / バイエルン式マイクロブリュワリー）または Canterbury Brewers Collective（地元クラフトビール23種以上）/ 96 Oxford Terrace / 毎日営業</div>
+          <div class="chips"><span class="chip chip-surface">夕食</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Riverside+Market+96+Oxford+Terrace+Christchurch" target="_blank">Riverside Market</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Kaiser+Brew+Garden+Christchurch" target="_blank">Kaiser Brew Garden</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Canterbury+Brewers+Collective+Christchurch" target="_blank">Canterbury Brewers</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">泊</div>
+        <div class="event-body">
+          <div class="event-title">Hotel Give</div>
+          <div class="event-detail">クラシック ツインルーム</div>
+          <div class="chips"><span class="chip chip-primary">宿泊</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Hotel+Give+Christchurch" target="_blank">ホテルマップ</a>
+            <a class="btn btn-confirm" href="https://secure.booking.com/confirmation.ja.html?label=ja-jp-booking-desktop-UX*uj5gOn_qEx3fCB8p2DgS655523704762%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-443516742211%3Alp1009252%3Ali%3Adec%3Adm&sid=614b382c4d78bfcd00db43dfca60aaae&gclid=CjwKCAjw8arQBhB9EiwAfIKdQigMGpBYHtviS6iEQHPGfn73hesEH9-hn_qu-o7sUQEOzAFzEN7YkhoC4nIQAvD_BwE&aid=2311236&auth_key=iNUySCHnsf6GGpDs&source=mytrips" target="_blank">予約確認</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5/25 -->
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-date"><div class="d">25</div><div class="m">MAY · MON</div></div>
+      <div class="day-meta">
+        <div class="day-weekday">月曜日</div>
+        <div class="day-place">レイク・テカポ</div>
+        <div class="day-place-sub">Lake Tekapo — Stars &amp; Photography</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="event">
+        <div class="event-time">07:30</div>
+        <div class="event-body">
+          <div class="event-title">朝食 — Riverside Market カフェ</div>
+          <div class="event-detail">毎日営業で確実。出発前に済ませる</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Riverside+Market+96+Oxford+Terrace+Christchurch" target="_blank">Riverside Market</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">09:00</div>
+        <div class="event-body">
+          <div class="event-title">クライストチャーチ出発 &rarr; テカポ（約3時間）</div>
+          <div class="event-detail">SH1 &rarr; SH8 経由</div>
+          <div class="chips"><span class="chip chip-surface">移動</span></div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">途中</div>
+        <div class="event-body">
+          <div class="event-title">撮影スポット — Lake Pukaki 展望エリア</div>
+          <div class="event-detail">マウントクックを背景にエメラルドブルーの湖。SH8沿い / 10〜15分停車</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Lake+Pukaki+Visitor+Centre+New+Zealand" target="_blank">Lake Pukaki 展望台</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">12:00</div>
+        <div class="event-body">
+          <div class="event-title">テカポ到着 / 昼食</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Lake+Tekapo+Village+cafes" target="_blank">テカポ村内カフェ</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">13:30</div>
+        <div class="event-body">
+          <div class="event-title">マウントジョン展望台（夜の撮影ポイント下見）</div>
+          <div class="event-detail">有料道路で山頂へ。360度の眺望。夜の撮影構図を昼間に確認しておく</div>
+          <div class="chips"><span class="chip chip-primary">撮影準備</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Mount+John+Observatory+Lake+Tekapo" target="_blank">マウントジョン展望台</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">15:00</div>
+        <div class="event-body">
+          <div class="event-title">Astro Cafe（山頂）</div>
+          <div class="event-detail">NZ絶景レストランTop10選出。コーヒー＆ケーキで休憩</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Astro+Cafe+Mount+John+Lake+Tekapo" target="_blank">Astro Cafe</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">16:30</div>
+        <div class="event-body">
+          <div class="event-title">撮影 — 善き羊飼いの教会 × 夕暮れ</div>
+          <div class="event-detail">Church of the Good Shepherd / 湖畔の石造り教会。マジックアワー狙い。早めの場所取り推奨</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Church+of+the+Good+Shepherd+Lake+Tekapo" target="_blank">善き羊飼いの教会</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">18:00</div>
+        <div class="event-body">
+          <div class="event-title">夕食 — Blue Lake Eatery &amp; Bar</div>
+          <div class="event-detail">マウントクックサーモン・カンタベリーラムなど地元食材のKiwiクラシック。暖炉そばでしっかり体を温めてから夜の撮影へ</div>
+          <div class="chips"><span class="chip chip-surface">夕食</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Blue+Lake+Eatery+Bar+Lake+Tekapo" target="_blank">Blue Lake Eatery</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">19:30</div>
+        <div class="event-body">
+          <div class="event-title">星景撮影 — 本番</div>
+          <div class="event-detail">①教会前の湖畔（定番）または②マウントジョン周辺の農道（光害が少なく天の川の発色が豊か）/ 5月は新月付近で好条件 / 気温0〜5℃・防寒必須</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="note">設定目安：ISO 3200〜6400 / F2.8以下 / SS 15〜25秒 / 三脚＋リモートシャッター必須</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Lake+Tekapo+lakefront+stargazing" target="_blank">湖畔撮影エリア</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">泊</div>
+        <div class="event-body">
+          <div class="event-title">ザ ゴッドレイ ホテル</div>
+          <div class="event-detail">The Godley Hotel / スタンダードルーム レイクビュー（朝食込）</div>
+          <div class="chips"><span class="chip chip-primary">宿泊</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=The+Godley+Hotel+Lake+Tekapo" target="_blank">ホテルマップ</a>
+            <a class="btn btn-confirm" href="https://secure.booking.com/confirmation.ja.html?label=ja-jp-booking-desktop-UX*uj5gOn_qEx3fCB8p2DgS655523704762%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-443516742211%3Alp1009252%3Ali%3Adec%3Adm&sid=614b382c4d78bfcd00db43dfca60aaae&gclid=CjwKCAjw8arQBhB9EiwAfIKdQigMGpBYHtviS6iEQHPGfn73hesEH9-hn_qu-o7sUQEOzAFzEN7YkhoC4nIQAvD_BwE&aid=2311236&auth_key=Eg501CQwItSuzCB7&source=mytrips" target="_blank">予約確認</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5/26 -->
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-date"><div class="d">26</div><div class="m">MAY · TUE</div></div>
+      <div class="day-meta">
+        <div class="day-weekday">火曜日</div>
+        <div class="day-place">マウントクック</div>
+        <div class="day-place-sub">Aoraki / Mount Cook</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="event">
+        <div class="event-time">09:00</div>
+        <div class="event-body">
+          <div class="event-title">テカポ出発 &rarr; マウントクック（約1.5時間）</div>
+          <div class="chips"><span class="chip chip-surface">移動</span></div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">10:30</div>
+        <div class="event-body">
+          <div class="event-title">DOCビジターセンターで情報収集</div>
+          <div class="event-detail">当日のトラック状況・天気・路面凍結情報を確認。5月は必須</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Aoraki+Mount+Cook+DOC+Visitor+Centre" target="_blank">DOCビジターセンター</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">11:00</div>
+        <div class="event-body">
+          <div class="event-title">撮影ハイク — タスマン氷河ウォーク</div>
+          <div class="event-detail">①タスマン湖トラック（往復1時間・フラット）氷山を間近に / ②タスマン氷河展望台（往復40〜60分・階段あり）氷河を俯瞰 / 合わせて約2時間</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="alert">駐車料金：White Horse Hill $5/時・$25/日（カード払いのみ）</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Tasman+Glacier+Lake+Mount+Cook+trailhead" target="_blank">タスマン氷河駐車場</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">13:00</div>
+        <div class="event-body">
+          <div class="event-title">昼食 — The Old Mountaineers Cafe</div>
+          <div class="event-detail">マウントクック村内。窓からマウントクックが正面に見える</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=The+Old+Mountaineers+Cafe+Mount+Cook" target="_blank">Old Mountaineers Cafe</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">14:30</div>
+        <div class="event-body">
+          <div class="event-title">撮影ハイク — キア・ポイントトラック</div>
+          <div class="event-detail">往復4.6km・約2時間。ミューラー氷河湖とマウントクックを正面から。16〜17時のアルペングロー狙い</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Kea+Point+Track+Mount+Cook" target="_blank">Kea Point トレイルヘッド</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">18:00</div>
+        <div class="event-body">
+          <div class="event-title">夕食 — The Hermitage Hotel レストラン</div>
+          <div class="event-detail">宿泊客以外も利用可。マウントクック村で最も充実した食事スポット</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=The+Hermitage+Hotel+Mount+Cook" target="_blank">The Hermitage</a>
+            <a class="btn btn-book" href="https://www.hermitage.co.nz/dining/" target="_blank">レストラン詳細</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">泊</div>
+        <div class="event-body">
+          <div class="event-title">Haka House Hostel Aoraki Mt Cook</div>
+          <div class="event-detail">（前予約から1週間スライド想定）</div>
+          <div class="chips"><span class="chip chip-primary">宿泊</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Haka+House+Hostel+Mount+Cook" target="_blank">ホステルマップ</a>
+            <a class="btn btn-confirm" href="https://secure.booking.com/confirmation.ja.html?label=ja-jp-booking-desktop-UX*uj5gOn_qEx3fCB8p2DgS655523704762%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-443516742211%3Alp1009252%3Ali%3Adec%3Adm&sid=614b382c4d78bfcd00db43dfca60aaae&gclid=CjwKCAjw8arQBhB9EiwAfIKdQigMGpBYHtviS6iEQHPGfn73hesEH9-hn_qu-o7sUQEOzAFzEN7YkhoC4nIQAvD_BwE&aid=2311236&auth_key=s2XgpV0oVeOfpSJK&source=mytrips" target="_blank">予約確認</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5/27 -->
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-date"><div class="d">27</div><div class="m">MAY · WED</div></div>
+      <div class="day-meta">
+        <div class="day-weekday">水曜日</div>
+        <div class="day-place">オマラマへ</div>
+        <div class="day-place-sub">Mt. Cook &rarr; Pukaki &rarr; Twizel &rarr; Omarama</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="event">
+        <div class="event-time">06:30</div>
+        <div class="event-body">
+          <div class="event-title">撮影 — タスマン湖畔 サンライズ</div>
+          <div class="event-detail">日の出の光がマウントクックの山頂に当たる絶好スポット。湖面の反射×氷山×南アルプス。5月の日の出は7:15〜7:30ごろ</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Tasman+Lake+Mount+Cook+National+Park" target="_blank">タスマン湖畔</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">09:30</div>
+        <div class="event-body">
+          <div class="event-title">マウントクック出発</div>
+          <div class="chips"><span class="chip chip-surface">移動</span></div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">09:45</div>
+        <div class="event-body">
+          <div class="event-title">撮影 — Peters Lookout</div>
+          <div class="event-detail">SH80沿い。ズームレンズでマウントクックを引き寄せる定番撮影地。5〜10分停車</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Peters+Lookout+Mount+Cook+Road" target="_blank">Peters Lookout</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">10:15</div>
+        <div class="event-body">
+          <div class="event-title">撮影 — Lake Pukaki 展望エリア</div>
+          <div class="event-detail">SH8沿い展望台。エメラルドブルーの湖×マウントクック。午前中は湖の色が出やすい。30〜40分</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Lake+Pukaki+Visitor+Centre+New+Zealand" target="_blank">Lake Pukaki 展望台</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">11:00</div>
+        <div class="event-body">
+          <div class="event-title">軽食 — Mt Cook Alpine Salmon Shop</div>
+          <div class="event-detail">プカキ湖畔。湖越しにマウントクックを眺めながらサーモン刺身（NZ$15）。10:00〜16:30営業</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Mt+Cook+Alpine+Salmon+Shop+Lake+Pukaki" target="_blank">Alpine Salmon Shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">11:45</div>
+        <div class="event-body">
+          <div class="event-title">昼食 — High Country Salmon</div>
+          <div class="event-detail">SH8沿い・Twizel南3km。サーモンバーガー・サーモン丼・スモークサーモン。フローティングカフェ。毎日8:00〜18:00</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=High+Country+Salmon+Twizel+New+Zealand" target="_blank">High Country Salmon</a>
+            <a class="btn btn-book" href="https://www.highcountrysalmon.co.nz/" target="_blank">公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">12:30</div>
+        <div class="event-body">
+          <div class="event-title">Twizel で買い出し・給油</div>
+          <div class="event-detail">New World Twizel で夕食用食材＆現金を調達。オマラマは小さな村なのでここで準備</div>
+          <div class="alert">クレイ・クリフの入場料は現金のみの可能性あり</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=New+World+Twizel" target="_blank">New World Twizel</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">13:15</div>
+        <div class="event-body">
+          <div class="event-title">撮影 — クレイ・クリフ（Clay Cliffs）</div>
+          <div class="event-detail">オマラマから車で5〜10分。奇岩の迷路を1〜1.5時間散策。午後の光で奇岩のテクスチャが立体的に</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Clay+Cliffs+Omarama+New+Zealand" target="_blank">Clay Cliffs</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">15:30</div>
+        <div class="event-body">
+          <div class="event-title">アフリリ川・ベンモア湖周辺ドライブ＆散策</div>
+          <div class="event-detail">夕方の光が水面に当たる静かな湖畔。のんびり撮影しながら散歩</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Lake+Benmore+Omarama" target="_blank">ベンモア湖</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Ahuriri+River+Omarama" target="_blank">アフリリ川</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">泊</div>
+        <div class="event-body">
+          <div class="event-title">アフリリ モーテル</div>
+          <div class="event-detail">Ahuriri Motels / 1ベッドルーム アパートメント（キッチン付き）</div>
+          <div class="chips"><span class="chip chip-primary">宿泊</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Ahuriri+Motels+Omarama" target="_blank">モーテルマップ</a>
+            <a class="btn btn-confirm" href="https://secure.booking.com/confirmation.ja.html?label=ja-jp-booking-desktop-UX*uj5gOn_qEx3fCB8p2DgS655523704762%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-443516742211%3Alp1009252%3Ali%3Adec%3Adm&sid=614b382c4d78bfcd00db43dfca60aaae&gclid=CjwKCAjw8arQBhB9EiwAfIKdQigMGpBYHtviS6iEQHPGfn73hesEH9-hn_qu-o7sUQEOzAFzEN7YkhoC4nIQAvD_BwE&aid=2311236&auth_key=BXinu10k5J3KVEHc&source=mytrips" target="_blank">予約確認</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5/28 TOUR DAY -->
+  <div class="day-card highlight-gold">
+    <div class="day-head">
+      <div class="day-date"><div class="d">28</div><div class="m">MAY · THU</div></div>
+      <div class="day-meta">
+        <div class="day-weekday">木曜日</div>
+        <div class="day-place">テ アナウ</div>
+        <div class="day-place-sub">Te Anau — Glowworm Caves</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="event">
+        <div class="event-time">09:00</div>
+        <div class="event-body">
+          <div class="event-title">オマラマ出発 &rarr; テアナウ（約2.5〜3時間）</div>
+          <div class="event-detail">途中リンディスパス経由</div>
+          <div class="chips"><span class="chip chip-surface">移動</span></div>
+          <div class="alert">5月は雪・凍結の可能性あり。NZTAで道路状況確認。Cromwellで給油推奨</div>
+          <div class="links">
+            <a class="btn btn-book" href="https://www.nzta.govt.nz/traffic-and-travel/highway-conditions/" target="_blank">NZTA 道路状況</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">09:30</div>
+        <div class="event-body">
+          <div class="event-title">撮影 — リンディスパス（Lindis Pass）</div>
+          <div class="event-detail">標高971m。4〜5月は草が黄金色に染まる最高の時期。「Lindis Pass Lookout」駐車場から展望デッキへ</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Lindis+Pass+Lookout+New+Zealand" target="_blank">Lindis Pass Lookout</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">11:00</div>
+        <div class="event-body">
+          <div class="event-title">昼食 — Cromwell</div>
+          <div class="event-detail">歴史的な旧市街（Historic Precinct）沿いのカフェで休憩</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Cromwell+Historic+Precinct+cafes" target="_blank">Cromwell Historic Precinct</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">13:30</div>
+        <div class="event-body">
+          <div class="event-title">テアナウ到着 / チェックイン</div>
+          <div class="event-detail">テ アナウ レイクフロント バックパッカーズ / 4人部屋 専用バスルーム付</div>
+          <div class="chips"><span class="chip chip-primary">宿泊</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Te+Anau+Lakefront+Backpackers" target="_blank">バックパッカーズマップ</a>
+            <a class="btn btn-confirm" href="https://secure.booking.com/confirmation.ja.html?label=ja-jp-booking-desktop-UX*uj5gOn_qEx3fCB8p2DgS655523704762%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-443516742211%3Alp1009252%3Ali%3Adec%3Adm&sid=614b382c4d78bfcd00db43dfca60aaae&gclid=CjwKCAjw8arQBhB9EiwAfIKdQigMGpBYHtviS6iEQHPGfn73hesEH9-hn_qu-o7sUQEOzAFzEN7YkhoC4nIQAvD_BwE&aid=2311236&auth_key=vvq5Wp9HMsmSgBBH&source=mytrips" target="_blank">予約確認</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">16:00</div>
+        <div class="event-body">
+          <div class="event-title">軽食 — 湖畔カフェ</div>
+          <div class="event-detail">The Redcliff Cafe &amp; Bar または Sandfly Cafe / Lakefront Drive沿い / ツアー集合場所まで徒歩圏内</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=The+Redcliff+Cafe+Te+Anau" target="_blank">The Redcliff Cafe</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Sandfly+Cafe+Te+Anau" target="_blank">Sandfly Cafe</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">16:15</div>
+        <div class="event-body">
+          <div class="event-title">RealNZ Visitor Centre 集合</div>
+          <div class="event-detail">85 Lakefront Drive, Te Anau / チェックイン締切：<strong>16:25</strong></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=RealNZ+Visitor+Centre+85+Lakefront+Drive+Te+Anau" target="_blank">集合場所マップ</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">16:30</div>
+        <div class="event-body">
+          <div class="event-title">Te Anau Glowworm Caves ツアー</div>
+          <div class="event-detail">
+            16:30〜18:45 / 予約番号：<strong>#FPHMKN</strong> / Booking #345991622 / 大人2名 / NZ$290<br>
+            持ち物：滑りにくい靴・防水ジャケット・フリース・虫除け・個人薬<br>
+            洞窟内は写真撮影禁止 / キャッシュレスのみ
+          </div>
+          <div class="chips"><span class="chip chip-tertiary">予約済ツアー</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Te+Anau+Glowworm+Caves" target="_blank">洞窟マップ</a>
+            <a class="btn btn-confirm" href="https://www.realnz.com/en/experiences/glowworm-caves/te-anau-glowworm-caves/" target="_blank">チケット確認</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">19:00</div>
+        <div class="event-body">
+          <div class="event-title">夕食 — 湖畔の近場</div>
+          <div class="event-detail">Ristorante Pizzeria a Mano（評判のピザ）または The Ranch Bar &amp; Grill（ステーキ・バーガー）</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Ristorante+Pizzeria+a+Mano+Te+Anau" target="_blank">Pizzeria a Mano</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=The+Ranch+Bar+Grill+Te+Anau" target="_blank">The Ranch Bar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5/29 CRUISE DAY -->
+  <div class="day-card highlight-blue">
+    <div class="day-head">
+      <div class="day-date"><div class="d">29</div><div class="m">MAY · FRI</div></div>
+      <div class="day-meta">
+        <div class="day-weekday">金曜日</div>
+        <div class="day-place">ミルフォード・サウンド</div>
+        <div class="day-place-sub">Milford Sound &rarr; Queenstown</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="event">
+        <div class="event-time">出発前</div>
+        <div class="event-body">
+          <div class="event-title">テアナウで給油 + 道路状況確認</div>
+          <div class="alert">ミルフォードにガソリンスタンドなし。スノーチェーン推奨。防水レインウェア必携（年間雨量7,000mm）</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=gas+station+Te+Anau" target="_blank">テアナウ ガソリンスタンド</a>
+            <a class="btn btn-book" href="https://www.nzta.govt.nz/traffic-and-travel/highway-conditions/" target="_blank">NZTA 道路状況</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">07:00</div>
+        <div class="event-body">
+          <div class="event-title">テアナウ出発 &rarr; ミルフォード・サウンド（約1.5時間）</div>
+          <div class="chips"><span class="chip chip-surface">移動</span></div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">07:30</div>
+        <div class="event-body">
+          <div class="event-title">撮影 — Eglinton Valley</div>
+          <div class="event-detail">氷河が削った広大な谷。黄金色のタスックグラス×山のコントラスト。5〜10分停車</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Eglinton+Valley+Milford+Road" target="_blank">Eglinton Valley</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">08:00</div>
+        <div class="event-body">
+          <div class="event-title">撮影 — Mirror Lakes</div>
+          <div class="event-detail">SH94沿い。400mの遊歩道5分。早朝の無風なら湖面にアール山脈が完璧に映る。広角レンズ推奨。15〜20分停車</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Mirror+Lakes+Milford+Road+Fiordland" target="_blank">Mirror Lakes</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">10:00</div>
+        <div class="event-body">
+          <div class="event-title">ミルフォード到着 / Foreshore Walk で撮影</div>
+          <div class="event-detail">400m・15分のウォーク。マイター・ピークを正面から撮影できる穴場スポット</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Milford+Sound+Visitor+Terminal" target="_blank">Milford Sound Visitor Terminal</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">11:00</div>
+        <div class="event-body">
+          <div class="event-title">Milford Sound Cruise — Mariner号</div>
+          <div class="event-detail">
+            11:00〜13:00 / 予約番号：<strong>#FPHMKN</strong> / Booking #345991663 / 大人2名 / NZ$350<br>
+            チェックイン：<strong>10:40まで</strong>（締切10:45 / ゲート10:55）<br>
+            RealNZ カウンター（Milford Visitor Terminal 入口左側）<br>
+            無料駐車場：Deepwater Basin Road（ターミナルまで徒歩30分）<br>
+            船内キャッシュレスのみ
+          </div>
+          <div class="chips"><span class="chip chip-tertiary">予約済ツアー</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Milford+Sound+Visitor+Terminal" target="_blank">クルーズターミナル</a>
+            <a class="btn btn-confirm" href="https://www.realnz.com/en/experiences/day-cruises/milford-sound-signature-cruise/" target="_blank">チケット確認</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">13:00</div>
+        <div class="event-body">
+          <div class="event-title">クルーズ後の撮影 &amp; 昼食</div>
+          <div class="event-detail">Foreshore Walk沿いで撮影。午後の光でクルーズ前とは違う表情が出る。ターミナルカフェで軽食</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Milford+Sound+Foreshore+Walk" target="_blank">Foreshore Walk</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">14:00</div>
+        <div class="event-body">
+          <div class="event-title">ミルフォード出発 &rarr; クイーンズタウン（約4時間）</div>
+          <div class="event-detail">帰路：The Chasm（往復20分・滝スポット）またはMonkey Creekに立ち寄り可</div>
+          <div class="chips"><span class="chip chip-surface">移動</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=The+Chasm+Milford+Road" target="_blank">The Chasm</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">18:30</div>
+        <div class="event-body">
+          <div class="event-title">夕食 — Fergburger</div>
+          <div class="event-detail">クイーンズタウン最名物バーガー。8:00〜翌5:00営業</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Fergburger+Queenstown" target="_blank">Fergburger</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">泊</div>
+        <div class="event-body">
+          <div class="event-title">Qt inntouch</div>
+          <div class="event-detail">クイーンズタウン / ツインルーム 共用バスルーム（1泊目）</div>
+          <div class="chips"><span class="chip chip-primary">宿泊</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Qt+inntouch+Queenstown" target="_blank">ホステルマップ</a>
+            <a class="btn btn-confirm" href="https://secure.booking.com/confirmation.ja.html?label=ja-jp-booking-desktop-UX*uj5gOn_qEx3fCB8p2DgS655523704762%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-443516742211%3Alp1009252%3Ali%3Adec%3Adm&sid=614b382c4d78bfcd00db43dfca60aaae&gclid=CjwKCAjw8arQBhB9EiwAfIKdQigMGpBYHtviS6iEQHPGfn73hesEH9-hn_qu-o7sUQEOzAFzEN7YkhoC4nIQAvD_BwE&aid=2311236&auth_key=acmKGDW0W3BMM6ra&source=mytrips" target="_blank">予約確認</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5/30 -->
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-date"><div class="d">30</div><div class="m">MAY · SAT</div></div>
+      <div class="day-meta">
+        <div class="day-weekday">土曜日</div>
+        <div class="day-place">クイーンズタウン</div>
+        <div class="day-place-sub">Queenstown — Gondola &amp; Night Photography</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="event">
+        <div class="event-time">08:30</div>
+        <div class="event-body">
+          <div class="event-title">朝食 — Bespoke Kitchen</div>
+          <div class="event-detail">エッグベネディクト・フレッシュベイクが絶品。07:30〜14:00営業</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Bespoke+Kitchen+Queenstown" target="_blank">Bespoke Kitchen</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">09:30</div>
+        <div class="event-body">
+          <div class="event-title">撮影 — 湖畔 &amp; Queenstown Gardens</div>
+          <div class="event-detail">Queenstown Beach〜Steamer Wharf：湖越しにリマーカブルズを望む / Queenstown Gardens：秋の紅葉×湖面の反射</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Queenstown+Beach+Lake+Wakatipu" target="_blank">Queenstown Beach</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Queenstown+Gardens" target="_blank">Queenstown Gardens</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Steamer+Wharf+Queenstown" target="_blank">Steamer Wharf</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">12:30</div>
+        <div class="event-body">
+          <div class="event-title">昼食 — Fergburger</div>
+          <div class="event-detail">12:30着が行列少なめ</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Fergburger+Queenstown" target="_blank">Fergburger</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">13:30</div>
+        <div class="event-body">
+          <div class="event-title">市内散策 + ショッピング</div>
+          <div class="event-detail">Camp Street・Beach Street周辺のNZブランド雑貨・アウトドアショップ / Patagonia Chocolatesでチョコ＆アイス</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Camp+Street+Queenstown+shopping" target="_blank">Camp Street</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Patagonia+Chocolates+Queenstown" target="_blank">Patagonia Chocolates</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">16:30</div>
+        <div class="event-body">
+          <div class="event-title">スカイライン・ゴンドラ乗車</div>
+          <div class="event-detail">市内から徒歩15分。片道約15分でボブズピーク山頂へ。270度パノラマ。山頂は市内より5℃寒いので防寒必須</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Skyline+Gondola+Queenstown+Brecon+Street" target="_blank">ゴンドラ乗り場</a>
+            <a class="btn btn-book" href="https://queenstown.skyline.co.nz/book-now/" target="_blank">オンライン予約</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">17:00</div>
+        <div class="event-body">
+          <div class="event-title">撮影 — マジックアワー &rarr; 夜景</div>
+          <div class="event-detail">17:00〜17:30 マジックアワー〜日没 / 17:30〜17:45 ブルーアワー（最高の15分）/ 18:00〜 夜景撮影（街灯×リマーカブルズのシルエット）/ 三脚＋リモートシャッターでロングショット</div>
+          <div class="chips"><span class="chip chip-primary">撮影</span></div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">19:30</div>
+        <div class="event-body">
+          <div class="event-title">夕食 — Botswana Butchery</div>
+          <div class="event-detail">17 Marine Parade（湖畔）/ NZ Cuisine Good Food Awards 1ハット獲得 / プレミアム肉＆シーフード / 暖炉×湖畔 / 毎日11:00〜23:00 / スマートカジュアル推奨</div>
+          <div class="chips"><span class="chip chip-surface">夕食</span></div>
+          <div class="alert">要事前予約。土曜は特に混雑するため早めに予約を</div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Botswana+Butchery+17+Marine+Parade+Queenstown" target="_blank">Botswana Butchery</a>
+            <a class="btn btn-book" href="https://www.sevenrooms.com/reservations/botswanabutcheryqueenstown" target="_blank">SevenRooms 予約</a>
+            <a class="btn btn-phone" href="tel:+6434426994">03-442-6994</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">22:00</div>
+        <div class="event-body">
+          <div class="event-title">宿に戻る / 荷物を完全パック</div>
+          <div class="event-detail">翌05:00レンタカー返却のため04:15〜04:30出発が必要</div>
+          <div class="alert">翌朝は04:15出発。アラームを複数セット。荷物は前日夜に完全準備</div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">泊</div>
+        <div class="event-body">
+          <div class="event-title">Qt inntouch</div>
+          <div class="event-detail">クイーンズタウン / ツインルーム（2泊目）</div>
+          <div class="chips"><span class="chip chip-primary">宿泊</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Qt+inntouch+Queenstown" target="_blank">ホステルマップ</a>
+            <a class="btn btn-confirm" href="https://secure.booking.com/confirmation.ja.html?label=ja-jp-booking-desktop-UX*uj5gOn_qEx3fCB8p2DgS655523704762%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-443516742211%3Alp1009252%3Ali%3Adec%3Adm&sid=614b382c4d78bfcd00db43dfca60aaae&gclid=CjwKCAjw8arQBhB9EiwAfIKdQigMGpBYHtviS6iEQHPGfn73hesEH9-hn_qu-o7sUQEOzAFzEN7YkhoC4nIQAvD_BwE&aid=2311236&auth_key=acmKGDW0W3BMM6ra&source=mytrips" target="_blank">予約確認</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5/31 -->
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-date" style="background: #7F1D1D;"><div class="d">31</div><div class="m">MAY · SUN</div></div>
+      <div class="day-meta">
+        <div class="day-weekday">日曜日</div>
+        <div class="day-place">帰国日</div>
+        <div class="day-place-sub">Queenstown &rarr; Tokyo Haneda</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="event">
+        <div class="event-time">04:15</div>
+        <div class="event-body"><div class="event-title">宿を出発</div></div>
+      </div>
+      <div class="event">
+        <div class="event-time">05:00</div>
+        <div class="event-body">
+          <div class="event-title">クイーンズタウン空港 レンタカー返却</div>
+          <div class="event-detail">Avis 返却（利用期間終了）</div>
+          <div class="chips"><span class="chip chip-primary">レンタカー返却</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Avis+Queenstown+Airport" target="_blank">Avis クイーンズタウン空港</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">07:00</div>
+        <div class="event-body">
+          <div class="event-title">クイーンズタウン出発</div>
+          <div class="event-detail">カンタス航空便</div>
+          <div class="chips"><span class="chip chip-primary">フライト</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Queenstown+Airport+New+Zealand" target="_blank">クイーンズタウン空港</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">20:10</div>
+        <div class="event-body">
+          <div class="event-title">羽田空港 帰国</div>
+          <div class="chips"><span class="chip chip-primary">帰国</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .days -->
+
+<div class="section-gap"></div>
+
+<!-- INFO CARDS -->
+<div class="info-section">
+
+  <!-- Rental Car -->
+  <div class="info-card">
+    <div class="info-card-head">
+      <div class="info-card-title">レンタカー情報</div>
+    </div>
+    <div class="info-rows">
+      <div class="info-row">
+        <div class="info-label">会社</div>
+        <div class="info-value">Avis（Booking.com 経由）<br><a href="https://cars.booking.com/my-booking/-fvQDaHKG_DMDfNAf3iurK6ccGfQRZqyBN-aAqU0UeaYCNe5CrIah8flXj74JNxHAjnVdhSw3wR0PxCJLKgsUF2q29zEt4XYY8hMaDjY_hB_B33emCWWcTY_ABIzc5scrdNNe9fowSJMJDQ9RgAhCA?preflang=ja" target="_blank">予約確認はこちら</a></div>
+      </div>
+      <div class="info-row"><div class="info-label">車種</div><div class="info-value">マツダ3 または同等クラス</div></div>
+      <div class="info-row"><div class="info-label">開始</div><div class="info-value">5月24日（日）15:00 — クライストチャーチ空港</div></div>
+      <div class="info-row"><div class="info-label">返却</div><div class="info-value">5月31日（日）05:00 — クイーンズタウン空港</div></div>
+      <div class="info-row"><div class="info-label">注意</div><div class="info-value">NZは左側通行・右ハンドル。山道・砂利道・5月の積雪に注意。スノーチェーン準備推奨。</div></div>
+    </div>
+  </div>
+
+  <!-- Photo Notes -->
+  <div class="info-card" style="background: #0D2B20;">
+    <div class="info-card-head">
+      <div class="info-card-title">撮影メモ</div>
+    </div>
+    <div class="info-rows">
+      <div class="info-row"><div class="info-label">機材</div><div class="info-value">一眼ミラーレス / 三脚 / リモートシャッター</div></div>
+      <div class="info-row"><div class="info-label">星景設定</div><div class="info-value">ISO 3200〜6400 / F2.8以下 / SS 15〜25秒</div></div>
+      <div class="info-row"><div class="info-label">テカポ</div><div class="info-value">5月は新月付近で好条件。日没17:30〜。気温0〜5℃</div></div>
+      <div class="info-row"><div class="info-label">QT夜景</div><div class="info-value">ゴンドラ山頂。日没17:15〜。ブルーアワーが最高の15分</div></div>
+    </div>
+  </div>
+
+  <!-- Reservation Checklist -->
+  <div class="checklist-card">
+    <div class="checklist-head">
+      <div class="checklist-title">要予約チェックリスト</div>
+    </div>
+    <div class="checklist-rows">
+      <div class="checklist-row">
+        <div class="cl-date">5/28</div>
+        <div class="cl-body">
+          <div class="cl-name">土ボタル洞窟ツアー（RealNZ）— #FPHMKN</div>
+          <a class="cl-link" href="https://www.realnz.com/en/experiences/glowworm-caves/te-anau-glowworm-caves/" target="_blank">チケット確認ページ</a>
+        </div>
+      </div>
+      <div class="checklist-row">
+        <div class="cl-date">5/29</div>
+        <div class="cl-body">
+          <div class="cl-name">ミルフォード・サウンドクルーズ（RealNZ）— #FPHMKN</div>
+          <a class="cl-link" href="https://www.realnz.com/en/experiences/day-cruises/milford-sound-signature-cruise/" target="_blank">チケット確認ページ</a>
+        </div>
+      </div>
+      <div class="checklist-row">
+        <div class="cl-date">5/30</div>
+        <div class="cl-body">
+          <div class="cl-name">スカイライン・ゴンドラ（Skyline Queenstown）</div>
+          <a class="cl-link" href="https://queenstown.skyline.co.nz/book-now/" target="_blank">オンライン予約ページ</a>
+        </div>
+      </div>
+      <div class="checklist-row">
+        <div class="cl-date">5/30</div>
+        <div class="cl-body">
+          <div class="cl-name">Botswana Butchery — 要予約（土曜は特に混雑）</div>
+          <a class="cl-link" href="https://www.sevenrooms.com/reservations/botswanabutcheryqueenstown" target="_blank">SevenRooms 予約ページ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-gap"></div>
+
+<footer>
+  <strong>NZ South Island Trip 2025</strong><br>
+  May 23 – 31 &nbsp;&middot;&nbsp; 9 Days &nbsp;&middot;&nbsp; Personal Itinerary
+</footer>
+
+</body>
+</html>
