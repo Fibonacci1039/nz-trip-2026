@@ -283,6 +283,9 @@ body {
   margin-top: 1px;
 }
 
+/* Highlight days */
+
+
 /* Events */
 .day-body { padding: var(--sp-sm) var(--sp-md); }
 
@@ -543,6 +546,14 @@ body {
   text-decoration: none;
 }
 
+/* Photo card */
+.photo-card {
+  background: #0D2B20;
+  color: var(--on-primary);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
 /* ===========================
    FOOTER
    =========================== */
@@ -603,6 +614,8 @@ footer strong { color: var(--primary-70); }
   transform: rotate(180deg);
 }
 
+
+
 .day-head::after {
   content: "";
   display: block;
@@ -619,6 +632,8 @@ footer strong { color: var(--primary-70); }
   mask-size: contain;
   transition: transform 0.25s ease;
 }
+
+
 
 .day-card.open .day-head::after {
   transform: rotate(180deg);
@@ -716,11 +731,12 @@ footer strong { color: var(--primary-70); }
         <div class="event-time">15:00</div>
         <div class="event-body">
           <div class="event-title">レンタカー ピックアップ</div>
-          <div class="event-detail">Avis / マツダ3 または同等クラス（空港カウンター）</div>
+          <div class="event-detail">Budget / マツダ3 または同等クラス
+Christchurch Airport, Terminal Building, Christchurch 8053</div>
           <div class="chips"><span class="chip chip-primary">レンタカー開始</span></div>
           <div class="links">
-            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Avis+Christchurch+Airport" target="_blank">Avis カウンター</a>
-            <a class="btn btn-confirm" href="https://cars.booking.com/my-booking/-fvQDaHKG_DMDfNAf3iurK6ccGfQRZqyBN-aAqU0UeaYCNe5CrIah8flXj74JNxHAjnVdhSw3wR0PxCJLKgsUF2q29zEt4XYY8hMaDjY_hB_B33emCWWcTY_ABIzc5scrdNNe9fowSJMJDQ9RgAhCA?preflang=ja" target="_blank">予約確認</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Budget+Car+Rental+Christchurch+Airport+Terminal+Building" target="_blank">Budget カウンター</a>
+            <a class="btn btn-confirm" href="https://cars.booking.com/my-booking/-fvQDaHKG_DMDfNAf3iurK6ccGfQRZqyBN-aAqU0UeaYCNe5CrIah8flXj74JNxHAjnVdhSw3wR0PxCJLKgsUF2q29zEt4XYY8hMaDjY_hB_B33emCWWcTY_ABIzc5sc3vo2gTm1-7Bh7KwgoHl80g?preflang=ja" target="_blank">予約確認</a>
           </div>
         </div>
       </div>
@@ -1112,7 +1128,7 @@ footer strong { color: var(--primary-70); }
         </div>
       </div>
       <div class="event">
-        <div class="event-time">途中</div>
+        <div class="event-time">09:30</div>
         <div class="event-body">
           <div class="event-title">撮影 — リンディスパス（Lindis Pass）</div>
           <div class="event-detail">標高971m。4〜5月は草が黄金色に染まる最高の時期。「Lindis Pass Lookout」駐車場から展望デッキへ</div>
@@ -1184,11 +1200,11 @@ footer strong { color: var(--primary-70); }
       <div class="event">
         <div class="event-time">19:00</div>
         <div class="event-body">
-          <div class="event-title">夕食 — 湖畔の近場</div>
-          <div class="event-detail">Ristorante Pizzeria a Mano（評判のピザ）または The Ranch Bar &amp; Grill（ステーキ・バーガー）</div>
+          <div class="event-title">夕食 — Black Dog Bar</div>
+          <div class="event-detail">地元Fiordlandブランドのワイン・ラガーが揃う地元民御用達バー。夕食メニューは17:00〜20:30（地元食材を使ったラム・鴨・ベニソンなど）。ハッピーアワー17:30〜18:30 / 木曜15:00〜22:00 / 5 The Lane, Te Anau</div>
           <div class="links">
-            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Ristorante+Pizzeria+a+Mano+Te+Anau" target="_blank">Pizzeria a Mano</a>
-            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=The+Ranch+Bar+Grill+Te+Anau" target="_blank">The Ranch Bar</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Black+Dog+Bar+5+The+Lane+Te+Anau" target="_blank">Black Dog Bar</a>
+            <a class="btn btn-book" href="https://www.blackdogbar.co.nz/" target="_blank">公式サイト</a>
           </div>
         </div>
       </div>
@@ -1307,6 +1323,18 @@ footer strong { color: var(--primary-70); }
         </div>
       </div>
       <div class="event">
+        <div class="event-time">20:00</div>
+        <div class="event-body">
+          <div class="event-title">レンタカー返却</div>
+          <div class="event-detail">Budget 返却（利用期間終了）
+Sir Henry Wigley Drive, Frankton, Queenstown 9300</div>
+          <div class="chips"><span class="chip chip-surface">レンタカー返却</span></div>
+          <div class="links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Sir+Henry+Wigley+Drive+Frankton+Queenstown" target="_blank">Budget クイーンズタウン空港</a>
+          </div>
+        </div>
+      </div>
+      <div class="event">
         <div class="event-time">泊</div>
         <div class="event-body">
           <div class="event-title">Qt inntouch</div>
@@ -1380,7 +1408,7 @@ footer strong { color: var(--primary-70); }
         <div class="event-time">16:30</div>
         <div class="event-body">
           <div class="event-title">スカイライン・ゴンドラ乗車</div>
-          <div class="event-detail">市内から徒歩15分。片道約15分でボブズピーク山頂へ。270度パノラマ。山頂は市内より5℃寒いので防寒必須</div>
+          <div class="event-detail">市内から徒歩15分 or Uber。片道約15分でボブズピーク山頂へ。270度パノラマ。山頂は市内より5℃寒いので防寒必須</div>
           <div class="links">
             <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Skyline+Gondola+Queenstown+Brecon+Street" target="_blank">ゴンドラ乗り場</a>
             <a class="btn btn-book" href="https://queenstown.skyline.co.nz/book-now/" target="_blank">オンライン予約</a>
@@ -1413,8 +1441,8 @@ footer strong { color: var(--primary-70); }
         <div class="event-time">22:00</div>
         <div class="event-body">
           <div class="event-title">宿に戻る / 荷物を完全パック</div>
-          <div class="event-detail">翌05:00レンタカー返却のため04:15〜04:30出発が必要</div>
-          <div class="alert">翌朝は04:15出発。アラームを複数セット。荷物は前日夜に完全準備</div>
+          <div class="event-detail">空港へはUber/タクシーを前日夜に予約しておく（早朝05:00台のため）</div>
+          <div class="alert">翌朝は05:30頃出発。アラームを複数セット。荷物は前日夜に完全準備</div>
         </div>
       </div>
       <div class="event">
@@ -1444,17 +1472,12 @@ footer strong { color: var(--primary-70); }
     </div>
     <div class="day-body">
       <div class="event">
-        <div class="event-time">04:15</div>
-        <div class="event-body"><div class="event-title">宿を出発</div></div>
-      </div>
-      <div class="event">
-        <div class="event-time">05:00</div>
+        <div class="event-time">05:30</div>
         <div class="event-body">
-          <div class="event-title">クイーンズタウン空港 レンタカー返却</div>
-          <div class="event-detail">Avis 返却（利用期間終了）</div>
-          <div class="chips"><span class="chip chip-primary">レンタカー返却</span></div>
+          <div class="event-title">宿を出発 — Uber / タクシーで空港へ</div>
+          <div class="event-detail">前日夜にUberまたはタクシーを予約しておくこと。市内から空港まで約10分</div>
           <div class="links">
-            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Avis+Queenstown+Airport" target="_blank">Avis クイーンズタウン空港</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Sir+Henry+Wigley+Drive+Frankton+Queenstown+New+Zealand" target="_blank">クイーンズタウン空港</a>
           </div>
         </div>
       </div>
@@ -1465,7 +1488,7 @@ footer strong { color: var(--primary-70); }
           <div class="event-detail">カンタス航空便</div>
           <div class="chips"><span class="chip chip-primary">フライト</span></div>
           <div class="links">
-            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Queenstown+Airport+New+Zealand" target="_blank">クイーンズタウン空港</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Sir+Henry+Wigley+Drive+Frankton+Queenstown+New+Zealand" target="_blank">クイーンズタウン空港</a>
           </div>
         </div>
       </div>
@@ -1496,11 +1519,11 @@ footer strong { color: var(--primary-70); }
       <div class="info-rows">
       <div class="info-row">
         <div class="info-label">会社</div>
-        <div class="info-value">Avis（Booking.com 経由）<br><a href="https://cars.booking.com/my-booking/-fvQDaHKG_DMDfNAf3iurK6ccGfQRZqyBN-aAqU0UeaYCNe5CrIah8flXj74JNxHAjnVdhSw3wR0PxCJLKgsUF2q29zEt4XYY8hMaDjY_hB_B33emCWWcTY_ABIzc5scrdNNe9fowSJMJDQ9RgAhCA?preflang=ja" target="_blank">予約確認はこちら</a></div>
+        <div class="info-value">Budget（Booking.com 経由）<br><a href="https://cars.booking.com/my-booking/-fvQDaHKG_DMDfNAf3iurK6ccGfQRZqyBN-aAqU0UeaYCNe5CrIah8flXj74JNxHAjnVdhSw3wR0PxCJLKgsUF2q29zEt4XYY8hMaDjY_hB_B33emCWWcTY_ABIzc5sc3vo2gTm1-7Bh7KwgoHl80g?preflang=ja" target="_blank">予約確認はこちら</a></div>
       </div>
       <div class="info-row"><div class="info-label">車種</div><div class="info-value">マツダ3 または同等クラス</div></div>
-      <div class="info-row"><div class="info-label">開始</div><div class="info-value">5月24日（日）15:00 — クライストチャーチ空港</div></div>
-      <div class="info-row"><div class="info-label">返却</div><div class="info-value">5月31日（日）05:00 — クイーンズタウン空港</div></div>
+      <div class="info-row"><div class="info-label">開始</div><div class="info-value">5月24日（日）15:00 — Christchurch Airport Terminal Building, Christchurch 8053</div></div>
+      <div class="info-row"><div class="info-label">返却</div><div class="info-value">5月29日（金）20:00 — Sir Henry Wigley Drive, Frankton, Queenstown 9300</div></div>
       <div class="info-row"><div class="info-label">注意</div><div class="info-value">NZは左側通行・右ハンドル。山道・砂利道・5月の積雪に注意。スノーチェーン準備推奨。</div></div>
     </div>
     </div>
@@ -1516,20 +1539,6 @@ footer strong { color: var(--primary-70); }
     <div class="info-body" id="info-checklist">
     <div class="checklist-rows">
       <div class="checklist-row">
-        <div class="cl-date">5/28</div>
-        <div class="cl-body">
-          <div class="cl-name">土ボタル洞窟ツアー（RealNZ）— #FPHMKN</div>
-          <a class="cl-link" href="https://www.realnz.com/en/experiences/glowworm-caves/te-anau-glowworm-caves/" target="_blank">チケット確認ページ</a>
-        </div>
-      </div>
-      <div class="checklist-row">
-        <div class="cl-date">5/29</div>
-        <div class="cl-body">
-          <div class="cl-name">ミルフォード・サウンドクルーズ（RealNZ）— #FPHMKN</div>
-          <a class="cl-link" href="https://www.realnz.com/en/experiences/day-cruises/milford-sound-signature-cruise/" target="_blank">チケット確認ページ</a>
-        </div>
-      </div>
-      <div class="checklist-row">
         <div class="cl-date">5/30</div>
         <div class="cl-body">
           <div class="cl-name">スカイライン・ゴンドラ（Skyline Queenstown）</div>
@@ -1541,6 +1550,14 @@ footer strong { color: var(--primary-70); }
         <div class="cl-body">
           <div class="cl-name">Botswana Butchery — 要予約（土曜は特に混雑）</div>
           <a class="cl-link" href="https://www.sevenrooms.com/reservations/botswanabutcheryqueenstown" target="_blank">SevenRooms 予約ページ</a>
+        </div>
+      </div>
+      <div class="checklist-row">
+        <div class="cl-date">5/31</div>
+        <div class="cl-body">
+          <div class="cl-name">空港タクシー — 5/30夜までに予約（早朝05:30台・事前予約必須）</div>
+          <div class="cl-name" style="font-weight:300; font-size:12px; margin-top:4px; color: rgba(255,255,255,0.6);">Uber：アプリで当日予約可能だが早朝は台数が少ないため前日夜に予約しておくのが安全。タクシーはQueenstown Taxis（03-441-0101）に電話予約推奨。</div>
+          <a class="cl-link" href="https://www.google.com/maps/search/?api=1&query=Sir+Henry+Wigley+Drive+Frankton+Queenstown+New+Zealand" target="_blank">クイーンズタウン空港マップ</a>
         </div>
       </div>
     </div>
@@ -1588,6 +1605,9 @@ document.querySelectorAll(".info-toggle").forEach(function(toggle) {
     }
   });
 });
+
+
+
 
 // Open today's card automatically, fallback to first card
 var today = new Date();
